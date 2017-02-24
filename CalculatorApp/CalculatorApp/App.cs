@@ -27,7 +27,8 @@ namespace CalculatorApp
                 }
             };
 
-            MainPage = new NavigationPage(content);
+            //MainPage = new NavigationPage(content);
+            MainPage = new xamlCalculator();
         }
 
         protected override void OnStart()
