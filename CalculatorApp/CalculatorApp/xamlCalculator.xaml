@@ -3,6 +3,232 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculatorApp.xamlCalculator">
   <ContentPage.Content>
-    <Label Text="This is my initial xaml code." />
+    <Grid BackgroundColor="Navy">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <Label
+        x:Name="statusLabel"
+        Text=""
+        TextColor="Yellow"
+        FontSize="Small"
+        HorizontalOptions="Start"
+        Grid.ColumnSpan="3"
+        />
+
+      <Label
+        x:Name="displayLabel"
+        BackgroundColor="White"
+        TextColor="Black"
+        Text="0"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        XAlign="End"
+        Grid.Row="1"
+        Grid.Column="0"
+        Grid.ColumnSpan="4"
+        FontSize="Large"
+        FontAttributes="Bold"
+        />
+
+      <Button
+        x:Name="oneButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="1"
+        Grid.Row="2"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="twoButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="2"
+        Grid.Row="2"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="thrButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="3"
+        Grid.Row="2"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="fouButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="4"
+        Grid.Row="3"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="fivButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="5"
+        Grid.Row="3"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="sixButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="6"
+        Grid.Row="3"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="sevButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="7"
+        Grid.Row="4"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="eigButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="8"
+        Grid.Row="4"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="ninButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="9"
+        Grid.Row="4"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="zerButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="0"
+        Grid.Row="5"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        />
+
+      <Button
+        x:Name="equButton"
+        Clicked="OnOperatorButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="="
+        Grid.Row="6"
+        Grid.Column="2"
+        Grid.ColumnSpan="2"
+        />
+
+      <Button
+        x:Name="decButton"
+        Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="."
+        Grid.Row="5"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="eclButton"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="CE"
+        Grid.Row="6"
+        Grid.Column="0"
+        Clicked="OnClearEntryButtonClick"
+        />
+
+      <Button
+        x:Name="cclButton"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="CC"
+        Grid.Row="6"
+        Grid.Column="1"
+        Clicked="OnAllClearButtonClick"
+        />
+
+      <Button
+        x:Name="pluButton"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="+"
+        Grid.Row="2"
+        Grid.Column="3"
+        Clicked="OnOperatorButtonClick"
+        />
+
+      <Button
+        x:Name="minButton"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="-"
+        Grid.Row="3"
+        Grid.Column="3"
+        Clicked="OnOperatorButtonClick"
+        />
+
+      <Button
+        x:Name="mulButton"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="X"
+        Grid.Row="4"
+        Grid.Column="3"
+        Clicked="OnOperatorButtonClick"
+        />
+
+      <Button
+        x:Name="divButton"
+        BackgroundColor="Black"
+        TextColor="White"
+        Text="&#x00F7;"
+        Grid.Row="5"
+        Grid.Column="3"
+        Clicked="OnOperatorButtonClick"
+        />
+      
+    </Grid>
+    
   </ContentPage.Content>
 </ContentPage>
