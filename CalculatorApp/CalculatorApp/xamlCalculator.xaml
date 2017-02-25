@@ -6,6 +6,7 @@
     <Grid BackgroundColor="Navy">
       <Grid.RowDefinitions>
         <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
@@ -22,105 +23,108 @@
       <Label
         BackgroundColor="White"
         TextColor="Black"
-        Text="The number are gonna go here."
-        Grid.Row="0"
+        Text="0"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        XAlign="End"
+        Grid.Row="1"
         Grid.Column="0"
         Grid.ColumnSpan="4"
         />
 
       <Button
         Text="1"
-        Grid.Row="1"
+        Grid.Row="2"
         Grid.Column="0"
         />
 
       <Button
         Text="2"
-        Grid.Row="1"
+        Grid.Row="2"
         Grid.Column="1"
         />
 
       <Button
         Text="3"
-        Grid.Row="1"
+        Grid.Row="2"
         Grid.Column="2"
         />
 
       <Button
         Text="4"
-        Grid.Row="2"
+        Grid.Row="3"
         Grid.Column="0"
         />
 
       <Button
         Text="5"
-        Grid.Row="2"
+        Grid.Row="3"
         Grid.Column="1"
         />
 
       <Button
         Text="6"
-        Grid.Row="2"
+        Grid.Row="3"
         Grid.Column="2"
         />
 
       <Button
         Text="7"
-        Grid.Row="3"
+        Grid.Row="4"
         Grid.Column="0"
         />
 
       <Button
         Text="8"
-        Grid.Row="3"
+        Grid.Row="4"
         Grid.Column="1"
         />
 
       <Button
         Text="9"
-        Grid.Row="3"
+        Grid.Row="4"
         Grid.Column="2"
         />
 
       <Button
         Text="0"
-        Grid.Row="4"
+        Grid.Row="5"
         Grid.Column="0"
         />
 
       <Button
         Text="CE"
-        Grid.Row="4"
+        Grid.Row="5"
         Grid.Column="1"
         />
 
       <Button
         Text="C"
-        Grid.Row="4"
+        Grid.Row="5"
         Grid.Column="2"
         />
 
       <Button
         Text="+"
-        Grid.Row="1"
-        Grid.Column="3"
-        />
-
-      <Button
-        Text="-"
         Grid.Row="2"
         Grid.Column="3"
         />
 
       <Button
-        Text="X"
+        Text="-"
         Grid.Row="3"
         Grid.Column="3"
         />
 
       <Button
-        Text="&#x00F7;"
+        Text="X"
         Grid.Row="4"
+        Grid.Column="3"
+        />
+
+      <Button
+        Text="&#x00F7;"
+        Grid.Row="5"
         Grid.Column="3"
         />
       
