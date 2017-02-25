@@ -17,6 +17,11 @@ namespace CalculatorApp
 
         void OnNumberButtonClick(object sender, EventArgs args)
         {
+            if (displayLabel.Text == "OVERFLOW")
+            {
+                displayLabel.Text = "0";
+            }
+
             Button btn = (Button)sender;
 
             string strNumberDigit = btn.Text.Trim();
@@ -52,6 +57,13 @@ namespace CalculatorApp
 
         void OnOperatorButtonClick(object sender, EventArgs args)
         {
+            if(displayLabel.Text == "OVERFLOW")
+            {
+                resetTheInterface();
+            }
+
+            bool booOverflow = false;
+
             Button btn = (Button)sender;
 
             string strNextOperator = btn.Text;
@@ -108,7 +120,53 @@ namespace CalculatorApp
                         dblFirstOperand = Convert.ToDouble(Application.Current.Properties["strFirstOperand"]);
                     }
 
-                    dblResult = dblFirstOperand * dblSecondOperand;
+                    try
+                    {
+                        dblResult = dblFirstOperand * dblSecondOperand;
+                    }
+                    catch
+                    {
+                        booOverflow = true;
+                        dblResult = -99999.99999;
+                    }
+
+                    // who woulda thunk it. No error, it comes back as infinity
+                    if (dblResult.ToString() == "Infinity")
+                    {
+                        booOverflow = true;
+                        dblResult = -99999.99999;
+                    }
+
+                    break;
+
+                case "\u00F7":
+                    // if we haven't loaded a first operand yet, as at app start-up, we'll just multiply by 1
+                    if (Application.Current.Properties["strFirstOperand"].ToString() == "")
+                    {
+                        dblFirstOperand = 1;
+                    }
+                    else
+                    {
+                        dblFirstOperand = Convert.ToDouble(Application.Current.Properties["strFirstOperand"]);
+                    }
+
+                    try
+                    {
+                        dblResult = dblFirstOperand / dblSecondOperand;
+                    }
+                    catch
+                    {
+                        booOverflow = true;
+                        dblResult = -99999.99999;
+                    }
+
+                    // who woulda thunk it. No error, it comes back as infinity
+                    if (dblResult.ToString() == "Infinity")
+                    {
+                        booOverflow = true;
+                        dblResult = -99999.99999;
+                    }
+                    
                     break;
 
                 default:
@@ -119,24 +177,44 @@ namespace CalculatorApp
             }
 
             string strNewStatus = "";
-            if (strOperator != "=")
+
+            if (booOverflow)
             {
-                strNewStatus += dblFirstOperand.ToString()
-                + " " + strOperator + " "
-                + dblSecondOperand.ToString()
-                + " = " + dblResult.ToString();
+                displayLabel.Text = "OVERFLOW";
+                strNewStatus = "Overflow";
 
                 scrollUpStatusDisplay(strNewStatus);
             }
+            else
+            {
+                if (strOperator != "=")
+                {
+                    strNewStatus += dblFirstOperand.ToString()
+                    + " " + strOperator + " "
+                    + dblSecondOperand.ToString()
+                    + " = " + dblResult.ToString();
 
-            Application.Current.Properties["strOperator"] = strNextOperator;
-            Application.Current.Properties["strFirstOperand"] = dblResult.ToString();
-            Application.Current.Properties["strNewEntry"] = "True";
+                    scrollUpStatusDisplay(strNewStatus);
+                }
 
-            displayLabel.Text = dblResult.ToString();
+                Application.Current.Properties["strOperator"] = strNextOperator;
+                Application.Current.Properties["strFirstOperand"] = dblResult.ToString();
+                Application.Current.Properties["strNewEntry"] = "True";
+
+                // Trying to get the Android to keep the display left-justified but it won't
+                displayLabel.HorizontalTextAlignment = TextAlignment.End;
+                displayLabel.HorizontalOptions = LayoutOptions.FillAndExpand;
+
+                displayLabel.Text = dblResult.ToString();
+            }
         }
 
-        void resetTheInterface(object sender, EventArgs args)
+        void OnAllClearButtonClick(object sender, EventArgs args)
+        {
+            resetTheInterface();
+        }
+
+        void resetTheInterface()
         {
             Application.Current.Properties["strOperator"] = "=";
             Application.Current.Properties["strFirstOperand"] = "";

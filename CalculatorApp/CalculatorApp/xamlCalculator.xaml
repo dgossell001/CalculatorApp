@@ -17,9 +17,8 @@
 
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
-        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
       
@@ -29,6 +28,7 @@
         TextColor="Yellow"
         FontSize="Small"
         HorizontalOptions="Start"
+        Grid.ColumnSpan="3"
         />
 
       <Label
@@ -41,7 +41,7 @@
         XAlign="End"
         Grid.Row="1"
         Grid.Column="0"
-        Grid.ColumnSpan="5"
+        Grid.ColumnSpan="4"
         FontSize="Large"
         FontAttributes="Bold"
         />
@@ -79,6 +79,8 @@
       <Button
         x:Name="fouButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="4"
         Grid.Row="3"
         Grid.Column="0"
@@ -87,6 +89,8 @@
       <Button
         x:Name="fivButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="5"
         Grid.Row="3"
         Grid.Column="1"
@@ -95,6 +99,8 @@
       <Button
         x:Name="sixButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="6"
         Grid.Row="3"
         Grid.Column="2"
@@ -103,6 +109,8 @@
       <Button
         x:Name="sevButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="7"
         Grid.Row="4"
         Grid.Column="0"
@@ -111,6 +119,8 @@
       <Button
         x:Name="eigButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="8"
         Grid.Row="4"
         Grid.Column="1"
@@ -119,6 +129,8 @@
       <Button
         x:Name="ninButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="9"
         Grid.Row="4"
         Grid.Column="2"
@@ -127,6 +139,8 @@
       <Button
         x:Name="zerButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="0"
         Grid.Row="5"
         Grid.Column="0"
@@ -136,21 +150,28 @@
       <Button
         x:Name="equButton"
         Clicked="OnOperatorButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="="
         Grid.Row="6"
         Grid.Column="2"
-        Grid.ColumnSpan="3"
+        Grid.ColumnSpan="2"
         />
 
       <Button
         x:Name="decButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="."
         Grid.Row="5"
         Grid.Column="2"
         />
 
       <Button
+        x:Name="eclButton"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="CE"
         Grid.Row="6"
         Grid.Column="0"
@@ -158,41 +179,52 @@
         />
 
       <Button
+        x:Name="cclButton"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="CC"
         Grid.Row="6"
         Grid.Column="1"
-        Clicked="resetTheInterface"
+        Clicked="OnAllClearButtonClick"
         />
 
       <Button
+        x:Name="pluButton"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="+"
         Grid.Row="2"
         Grid.Column="3"
-        Grid.ColumnSpan="2"
         Clicked="OnOperatorButtonClick"
         />
 
       <Button
+        x:Name="minButton"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="-"
         Grid.Row="3"
         Grid.Column="3"
-        Grid.ColumnSpan="2"
         Clicked="OnOperatorButtonClick"
         />
 
       <Button
+        x:Name="mulButton"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="X"
         Grid.Row="4"
         Grid.Column="3"
-        Grid.ColumnSpan="2"
         Clicked="OnOperatorButtonClick"
         />
 
       <Button
+        x:Name="divButton"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="&#x00F7;"
         Grid.Row="5"
         Grid.Column="3"
-        Grid.ColumnSpan="2"
         Clicked="OnOperatorButtonClick"
         />
       
