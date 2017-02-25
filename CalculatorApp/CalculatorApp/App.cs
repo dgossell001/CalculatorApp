@@ -11,34 +11,25 @@ namespace CalculatorApp
     {
         public App()
         {
-            // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "CalculatorApp",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
-
-            //MainPage = new NavigationPage(content);
             MainPage = new xamlCalculator();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            Properties["strOperator"] = "=";
+            Properties["strFirstOperand"] = "";
+            Properties["strSecondOperand"] = "";
+            Properties["strNewEntry"] = "True";
+
+            Properties["strStatus1"] = "";
+            Properties["strStatus2"] = "";
+            Properties["strStatus3"] = "";
+            Properties["strStatus4"] = "";
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            // Handle when my app goes to sleep
         }
 
         protected override void OnResume()

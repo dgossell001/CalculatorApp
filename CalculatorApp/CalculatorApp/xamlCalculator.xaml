@@ -17,11 +17,19 @@
 
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="*" />
-        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
+      
+      <Label
+        x:Name="statusLabel"
+        Text=""
+        TextColor="Yellow"
+        FontSize="Small"
+        HorizontalOptions="Start"
+        />
 
       <Label
         x:Name="displayLabel"
@@ -41,6 +49,8 @@
       <Button
         x:Name="oneButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="1"
         Grid.Row="2"
         Grid.Column="0"
@@ -49,6 +59,8 @@
       <Button
         x:Name="twoButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="2"
         Grid.Row="2"
         Grid.Column="1"
@@ -57,6 +69,8 @@
       <Button
         x:Name="thrButton"
         Clicked="OnNumberButtonClick"
+        BackgroundColor="Black"
+        TextColor="White"
         Text="3"
         Grid.Row="2"
         Grid.Column="2"
@@ -120,6 +134,8 @@
         />
 
       <Button
+        x:Name="equButton"
+        Clicked="OnOperatorButtonClick"
         Text="="
         Grid.Row="6"
         Grid.Column="2"
@@ -142,9 +158,10 @@
         />
 
       <Button
-        Text="C"
+        Text="CC"
         Grid.Row="6"
         Grid.Column="1"
+        Clicked="resetTheInterface"
         />
 
       <Button
