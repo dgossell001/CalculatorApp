@@ -3,6 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculatorApp.xamlCalculator">
   
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="opButtonStyle1" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="Text" Value="Black" />
+      </Style>
+      <Style x:Key="numButtonStyle1" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="Text" Value="White" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
   <ContentPage.Content>
     <Grid BackgroundColor="Navy">
       <Grid.RowDefinitions>
@@ -52,8 +65,7 @@
       <Button
         x:Name="oneButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="1"
         Grid.Row="2"
         Grid.Column="0"
@@ -62,8 +74,7 @@
       <Button
         x:Name="twoButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="2"
         Grid.Row="2"
         Grid.Column="1"
@@ -153,8 +164,7 @@
       <Button
         x:Name="equButton"
         Clicked="OnOperatorButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="="
         Grid.Row="6"
         Grid.Column="2"
@@ -173,8 +183,7 @@
 
       <Button
         x:Name="eclButton"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="CE"
         Grid.Row="6"
         Grid.Column="0"
@@ -183,8 +192,7 @@
 
       <Button
         x:Name="cclButton"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="CC"
         Grid.Row="6"
         Grid.Column="1"
@@ -193,8 +201,7 @@
 
       <Button
         x:Name="pluButton"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="+"
         Grid.Row="2"
         Grid.Column="3"
