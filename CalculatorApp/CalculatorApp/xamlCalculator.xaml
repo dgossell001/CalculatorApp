@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CalculatorApp.xamlCalculator">
+  
   <ContentPage.Content>
     <Grid BackgroundColor="Navy">
       <Grid.RowDefinitions>
@@ -27,7 +28,7 @@
         Text=""
         TextColor="Yellow"
         FontSize="Small"
-        HorizontalOptions="Start"
+        VerticalTextAlignment="End"
         Grid.ColumnSpan="3"
         />
 
@@ -37,8 +38,10 @@
         TextColor="Black"
         Text="0"
         HorizontalOptions="FillAndExpand"
+        HorizontalTextAlignment="End"
         VerticalOptions="FillAndExpand"
         XAlign="End"
+        YAlign="End"
         Grid.Row="1"
         Grid.Column="0"
         Grid.ColumnSpan="4"
