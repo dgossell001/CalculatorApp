@@ -223,6 +223,7 @@ namespace CalculatorApp
                     Resources["opButtonStyle0"] = Resources["opButtonStyle1"];
                     Resources["gridStyle0"] = Resources["gridStyle1"];
                     Resources["statusLabelStyle0"] = Resources["statusLabelStyle1"];
+                    Resources["displayLabelStyle0"] = Resources["displayLabelStyle1"];
                     break;
                 case "2":
                     styButton.Text += "3";
@@ -230,6 +231,7 @@ namespace CalculatorApp
                     Resources["opButtonStyle0"] = Resources["opButtonStyle2"];
                     Resources["gridStyle0"] = Resources["gridStyle2"];
                     Resources["statusLabelStyle0"] = Resources["statusLabelStyle2"];
+                    Resources["displayLabelStyle0"] = Resources["displayLabelStyle2"];
                     break;
                 case "3":
                     styButton.Text += "1";
@@ -237,6 +239,7 @@ namespace CalculatorApp
                     Resources["opButtonStyle0"] = Resources["opButtonStyle3"];
                     Resources["gridStyle0"] = Resources["gridStyle3"];
                     Resources["statusLabelStyle0"] = Resources["statusLabelStyle3"];
+                    Resources["displayLabelStyle0"] = Resources["displayLabelStyle3"];
                     break;
             }
         }

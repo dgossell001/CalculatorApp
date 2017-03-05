@@ -34,8 +34,8 @@
         <Setter Property="TextColor" Value="Yellow" />
       </Style>
       <Style x:Key="displayLabelStyle2" TargetType="Label">
-        <Setter Property="BackgroundColor" Value="White" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
       </Style>
       <Style x:Key="statusLabelStyle2" TargetType="Label">
         <Setter Property="TextColor" Value="White" />
@@ -53,8 +53,8 @@
         <Setter Property="TextColor" Value="White" />
       </Style>
       <Style x:Key="displayLabelStyle3" TargetType="Label">
-        <Setter Property="BackgroundColor" Value="White" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="Green" />
+        <Setter Property="TextColor" Value="White" />
       </Style>
       <Style x:Key="statusLabelStyle3" TargetType="Label">
         <Setter Property="TextColor" Value="Black" />
@@ -108,7 +108,7 @@
 
       <Label
         x:Name="displayLabel"
-        Style="{StaticResource displayLabelStyle1}"
+        Style="{DynamicResource displayLabelStyle0}"
         Text="0"
         HorizontalOptions="FillAndExpand"
         HorizontalTextAlignment="End"
