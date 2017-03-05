@@ -5,6 +5,11 @@
   
   <ContentPage.Resources>
     <ResourceDictionary>
+      <Style x:Key="opButtonStyle0" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      
       <Style x:Key="opButtonStyle1" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Silver" />
         <Setter Property="TextColor" Value="Black" />
@@ -13,9 +18,12 @@
         <Setter Property="BackgroundColor" Value="Black" />
         <Setter Property="TextColor" Value="White" />
       </Style>
-      <Style x:Key="dispLabelStyle1" TargetType="Label">
+      <Style x:Key="displayLabelStyle1" TargetType="Label">
         <Setter Property="BackgroundColor" Value="White" />
         <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="statusLabelStyle1" TargetType="Label">
+        <Setter Property="TextColor" Value="Yellow" />
       </Style>
       <Style x:Key="gridStyle1" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="Navy" />
@@ -45,8 +53,8 @@
       
       <Label
         x:Name="statusLabel"
+        Style="{StaticResource statusLabelStyle1}"
         Text=""
-        TextColor="Yellow"
         FontSize="Small"
         VerticalTextAlignment="End"
         Grid.ColumnSpan="3"
@@ -54,8 +62,7 @@
 
       <Label
         x:Name="displayLabel"
-        BackgroundColor="White"
-        TextColor="Black"
+        Style="{StaticResource displayLabelStyle1}"
         Text="0"
         HorizontalOptions="FillAndExpand"
         HorizontalTextAlignment="End"
@@ -235,10 +242,12 @@
 
       <Button
         x:Name="styButton"
+        Style="{StaticResource numButtonStyle1}"
+        FontSize="Small"
         Text="Change to style 2"
         Grid.Row="7"
-        Grid.Column="1"
-        Grid.ColumnSpan="2"
+        Grid.Column="0"
+        Grid.ColumnSpan="4"
         Clicked="OnStyleButtonClick"
         />
       
