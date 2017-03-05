@@ -65,8 +65,13 @@
       
       <Style x:Key="opButtonStyle0" TargetType="Button" BasedOn="{StaticResource opButtonStyle1}">
       </Style>
-      
       <Style x:Key="numButtonStyle0" TargetType="Button" BasedOn="{StaticResource numButtonStyle1}">
+      </Style>
+      <Style x:Key="gridStyle0" TargetType="Grid" BasedOn="{StaticResource gridStyle1}">
+      </Style>
+      <Style x:Key="statusLabelStyle0" TargetType="Label" BasedOn="{StaticResource statusLabelStyle1}">
+      </Style>
+      <Style x:Key="displayLabelStyle0" TargetType="Label" BasedOn="{StaticResource displayLabelStyle1}">
       </Style>
       
     </ResourceDictionary>
