@@ -45,7 +45,7 @@
       </Style>
       
       <Style x:Key="opButtonStyle3" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Orange" />
+        <Setter Property="BackgroundColor" Value="#FFFF00" />
         <Setter Property="TextColor" Value="Red" />
       </Style>
       <Style x:Key="numButtonStyle3" TargetType="Button">
