@@ -78,7 +78,7 @@
   </ContentPage.Resources>
   
   <ContentPage.Content>
-    <Grid Style="{StaticResource gridStyle1}" >
+    <Grid Style="{DynamicResource gridStyle0}" >
         <Grid.RowDefinitions>
         <RowDefinition Height="*" />
         <RowDefinition Height="Auto" />

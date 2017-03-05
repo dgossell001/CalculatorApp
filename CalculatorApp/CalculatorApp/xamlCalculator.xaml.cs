@@ -221,16 +221,19 @@ namespace CalculatorApp
                     styButton.Text += "2";
                     Resources["numButtonStyle0"] = Resources["numButtonStyle1"];
                     Resources["opButtonStyle0"] = Resources["opButtonStyle1"];
+                    Resources["gridStyle0"] = Resources["gridStyle1"];
                     break;
                 case "2":
                     styButton.Text += "3";
                     Resources["numButtonStyle0"] = Resources["numButtonStyle2"];
                     Resources["opButtonStyle0"] = Resources["opButtonStyle2"];
+                    Resources["gridStyle0"] = Resources["gridStyle2"];
                     break;
                 case "3":
                     styButton.Text += "1";
                     Resources["numButtonStyle0"] = Resources["numButtonStyle3"];
                     Resources["opButtonStyle0"] = Resources["opButtonStyle3"];
+                    Resources["gridStyle0"] = Resources["gridStyle3"];
                     break;
             }
         }
