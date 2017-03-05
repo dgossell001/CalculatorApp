@@ -45,11 +45,11 @@
       </Style>
       
       <Style x:Key="opButtonStyle3" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Silver" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="Orange" />
+        <Setter Property="TextColor" Value="Red" />
       </Style>
       <Style x:Key="numButtonStyle3" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="Red" />
         <Setter Property="TextColor" Value="White" />
       </Style>
       <Style x:Key="displayLabelStyle3" TargetType="Label">
@@ -64,6 +64,11 @@
       </Style>
       
       <Style x:Key="opButtonStyle0" TargetType="Button" BasedOn="{StaticResource opButtonStyle1}">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      
+      <Style x:Key="numButtonStyle0" TargetType="Button" BasedOn="{StaticResource numButtonStyle1}">
         <Setter Property="BackgroundColor" Value="Silver" />
         <Setter Property="TextColor" Value="Black" />
       </Style>
@@ -119,7 +124,7 @@
       <Button
         x:Name="oneButton"
         Clicked="OnNumberButtonClick"
-        Style="{StaticResource numButtonStyle1}"
+        Style="{DynamicResource numButtonStyle0}"
         Text="1"
         Grid.Row="2"
         Grid.Column="0"

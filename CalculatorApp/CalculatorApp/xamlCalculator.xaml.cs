@@ -219,12 +219,15 @@ namespace CalculatorApp
             {
                 case "1":
                     styButton.Text += "2";
+                    Resources["numButtonStyle0"] = Resources["numButtonStyle1"];
                     break;
                 case "2":
                     styButton.Text += "3";
+                    Resources["numButtonStyle0"] = Resources["numButtonStyle2"];
                     break;
                 case "3":
                     styButton.Text += "1";
+                    Resources["numButtonStyle0"] = Resources["numButtonStyle3"];
                     break;
             }
         }
