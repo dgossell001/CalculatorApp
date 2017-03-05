@@ -220,7 +220,7 @@
       <Button
         x:Name="equButton"
         Clicked="OnOperatorButtonClick"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="="
         Grid.Row="6"
         Grid.Column="2"
@@ -229,7 +229,7 @@
 
       <Button
         x:Name="eclButton"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="CE"
         Grid.Row="6"
         Grid.Column="0"
@@ -238,7 +238,7 @@
 
       <Button
         x:Name="cclButton"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="CC"
         Grid.Row="6"
         Grid.Column="1"
@@ -247,7 +247,7 @@
 
       <Button
         x:Name="pluButton"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="+"
         Grid.Row="2"
         Grid.Column="3"
@@ -256,7 +256,7 @@
 
       <Button
         x:Name="minButton"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="-"
         Grid.Row="3"
         Grid.Column="3"
@@ -265,7 +265,7 @@
 
       <Button
         x:Name="mulButton"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="X"
         Grid.Row="4"
         Grid.Column="3"
@@ -274,7 +274,7 @@
 
       <Button
         x:Name="divButton"
-        Style="{StaticResource opButtonStyle1}"
+        Style="{DynamicResource opButtonStyle0}"
         Text="&#x00F7;"
         Grid.Row="5"
         Grid.Column="3"
