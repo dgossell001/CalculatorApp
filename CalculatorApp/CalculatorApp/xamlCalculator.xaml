@@ -26,12 +26,12 @@
       </Style>
       
       <Style x:Key="opButtonStyle2" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Silver" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BackgroundColor" Value="Aqua" />
+        <Setter Property="TextColor" Value="Navy" />
       </Style>
       <Style x:Key="numButtonStyle2" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Black" />
-        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="Green" />
+        <Setter Property="TextColor" Value="Yellow" />
       </Style>
       <Style x:Key="displayLabelStyle2" TargetType="Label">
         <Setter Property="BackgroundColor" Value="White" />
