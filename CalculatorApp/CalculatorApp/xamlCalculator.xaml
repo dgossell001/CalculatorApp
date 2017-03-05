@@ -38,10 +38,10 @@
         <Setter Property="TextColor" Value="Black" />
       </Style>
       <Style x:Key="statusLabelStyle2" TargetType="Label">
-        <Setter Property="TextColor" Value="Yellow" />
+        <Setter Property="TextColor" Value="White" />
       </Style>
       <Style x:Key="gridStyle2" TargetType="Grid">
-        <Setter Property="BackgroundColor" Value="Navy" />
+        <Setter Property="BackgroundColor" Value="Fuchsia" />
       </Style>
       
       <Style x:Key="opButtonStyle3" TargetType="Button">
@@ -57,10 +57,10 @@
         <Setter Property="TextColor" Value="Black" />
       </Style>
       <Style x:Key="statusLabelStyle3" TargetType="Label">
-        <Setter Property="TextColor" Value="Yellow" />
+        <Setter Property="TextColor" Value="Black" />
       </Style>
       <Style x:Key="gridStyle3" TargetType="Grid">
-        <Setter Property="BackgroundColor" Value="Navy" />
+        <Setter Property="BackgroundColor" Value="Yellow" />
       </Style>
       
       <Style x:Key="opButtonStyle0" TargetType="Button" BasedOn="{StaticResource opButtonStyle1}">
