@@ -5,10 +5,6 @@
   
   <ContentPage.Resources>
     <ResourceDictionary>
-      <Style x:Key="opButtonStyle0" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Silver" />
-        <Setter Property="TextColor" Value="Black" />
-      </Style>
       
       <Style x:Key="opButtonStyle1" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Silver" />
@@ -28,6 +24,50 @@
       <Style x:Key="gridStyle1" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="Navy" />
       </Style>
+      
+      <Style x:Key="opButtonStyle2" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="numButtonStyle2" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="displayLabelStyle2" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="statusLabelStyle2" TargetType="Label">
+        <Setter Property="TextColor" Value="Yellow" />
+      </Style>
+      <Style x:Key="gridStyle2" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Navy" />
+      </Style>
+      
+      <Style x:Key="opButtonStyle3" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="numButtonStyle3" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="displayLabelStyle3" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="statusLabelStyle3" TargetType="Label">
+        <Setter Property="TextColor" Value="Yellow" />
+      </Style>
+      <Style x:Key="gridStyle3" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Navy" />
+      </Style>
+      
+      <Style x:Key="opButtonStyle0" TargetType="Button" BasedOn="{StaticResource opButtonStyle1}">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      
     </ResourceDictionary>
   </ContentPage.Resources>
   
