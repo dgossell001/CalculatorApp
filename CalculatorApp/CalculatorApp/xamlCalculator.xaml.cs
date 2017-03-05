@@ -209,6 +209,26 @@ namespace CalculatorApp
             }
         }
 
+        void OnStyleButtonClick(object sender, EventArgs args)
+        {
+            string strText = styButton.Text;
+            string newStyle = strText.Substring(strText.Length-1, 1);
+
+            styButton.Text = "Change to style ";
+            switch (newStyle)
+            {
+                case "1":
+                    styButton.Text += "2";
+                    break;
+                case "2":
+                    styButton.Text += "3";
+                    break;
+                case "3":
+                    styButton.Text += "1";
+                    break;
+            }
+        }
+
         void OnAllClearButtonClick(object sender, EventArgs args)
         {
             resetTheInterface();

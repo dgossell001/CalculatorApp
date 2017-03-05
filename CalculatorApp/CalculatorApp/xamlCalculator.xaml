@@ -7,18 +7,25 @@
     <ResourceDictionary>
       <Style x:Key="opButtonStyle1" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Silver" />
-        <Setter Property="Text" Value="Black" />
+        <Setter Property="TextColor" Value="Black" />
       </Style>
       <Style x:Key="numButtonStyle1" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Black" />
-        <Setter Property="Text" Value="White" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="dispLabelStyle1" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="gridStyle1" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Navy" />
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
   
   <ContentPage.Content>
-    <Grid BackgroundColor="Navy">
-      <Grid.RowDefinitions>
+    <Grid Style="{StaticResource gridStyle1}" >
+        <Grid.RowDefinitions>
         <RowDefinition Height="*" />
         <RowDefinition Height="Auto" />
         <RowDefinition Height="Auto" />
@@ -83,8 +90,7 @@
       <Button
         x:Name="thrButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="3"
         Grid.Row="2"
         Grid.Column="2"
@@ -93,8 +99,7 @@
       <Button
         x:Name="fouButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="4"
         Grid.Row="3"
         Grid.Column="0"
@@ -103,8 +108,7 @@
       <Button
         x:Name="fivButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="5"
         Grid.Row="3"
         Grid.Column="1"
@@ -113,8 +117,7 @@
       <Button
         x:Name="sixButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="6"
         Grid.Row="3"
         Grid.Column="2"
@@ -123,8 +126,7 @@
       <Button
         x:Name="sevButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="7"
         Grid.Row="4"
         Grid.Column="0"
@@ -133,8 +135,7 @@
       <Button
         x:Name="eigButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="8"
         Grid.Row="4"
         Grid.Column="1"
@@ -143,8 +144,7 @@
       <Button
         x:Name="ninButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="9"
         Grid.Row="4"
         Grid.Column="2"
@@ -153,12 +153,20 @@
       <Button
         x:Name="zerButton"
         Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource numButtonStyle1}"
         Text="0"
         Grid.Row="5"
         Grid.Column="0"
         Grid.ColumnSpan="2"
+        />
+
+      <Button
+        x:Name="decButton"
+        Clicked="OnNumberButtonClick"
+        Style="{StaticResource numButtonStyle1}"
+        Text="."
+        Grid.Row="5"
+        Grid.Column="2"
         />
 
       <Button
@@ -169,16 +177,6 @@
         Grid.Row="6"
         Grid.Column="2"
         Grid.ColumnSpan="2"
-        />
-
-      <Button
-        x:Name="decButton"
-        Clicked="OnNumberButtonClick"
-        BackgroundColor="Black"
-        TextColor="White"
-        Text="."
-        Grid.Row="5"
-        Grid.Column="2"
         />
 
       <Button
@@ -210,8 +208,7 @@
 
       <Button
         x:Name="minButton"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="-"
         Grid.Row="3"
         Grid.Column="3"
@@ -220,8 +217,7 @@
 
       <Button
         x:Name="mulButton"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="X"
         Grid.Row="4"
         Grid.Column="3"
@@ -230,12 +226,20 @@
 
       <Button
         x:Name="divButton"
-        BackgroundColor="Black"
-        TextColor="White"
+        Style="{StaticResource opButtonStyle1}"
         Text="&#x00F7;"
         Grid.Row="5"
         Grid.Column="3"
         Clicked="OnOperatorButtonClick"
+        />
+
+      <Button
+        x:Name="styButton"
+        Text="Change to style 2"
+        Grid.Row="7"
+        Grid.Column="1"
+        Grid.ColumnSpan="2"
+        Clicked="OnStyleButtonClick"
         />
       
     </Grid>
