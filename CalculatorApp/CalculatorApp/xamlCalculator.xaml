@@ -99,7 +99,7 @@
       
       <Label
         x:Name="statusLabel"
-        Style="{StaticResource statusLabelStyle1}"
+        Style="{DynamicResource statusLabelStyle0}"
         Text=""
         FontSize="Small"
         VerticalTextAlignment="End"
