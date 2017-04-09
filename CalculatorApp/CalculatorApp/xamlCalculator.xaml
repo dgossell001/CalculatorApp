@@ -1,8 +1,321 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CalculatorApp="clr-namespace:CalculatorApp;assembly=CalculatorApp"
              x:Class="CalculatorApp.xamlCalculator">
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <CalculatorApp:clsCalcViewModel x:Key="calcViewModel" />
+      
+      <Style x:Key="opButtonStyle1" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Silver" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="numButtonStyle1" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="displayLabelStyle1" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="statusLabelStyle1" TargetType="Label">
+        <Setter Property="TextColor" Value="Yellow" />
+      </Style>
+      <Style x:Key="gridStyle1" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Navy" />
+      </Style>
+      
+      <Style x:Key="opButtonStyle2" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Aqua" />
+        <Setter Property="TextColor" Value="Navy" />
+      </Style>
+      <Style x:Key="numButtonStyle2" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Green" />
+        <Setter Property="TextColor" Value="Yellow" />
+      </Style>
+      <Style x:Key="displayLabelStyle2" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="statusLabelStyle2" TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="gridStyle2" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Fuchsia" />
+      </Style>
+      
+      <Style x:Key="opButtonStyle3" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#FFFF00" />
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+      <Style x:Key="numButtonStyle3" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Red" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="displayLabelStyle3" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="Green" />
+        <Setter Property="TextColor" Value="White" />
+      </Style>
+      <Style x:Key="statusLabelStyle3" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="gridStyle3" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="Yellow" />
+      </Style>
+      
+      <Style x:Key="opButtonStyle0" TargetType="Button" BasedOn="{StaticResource opButtonStyle1}">
+      </Style>
+      <Style x:Key="numButtonStyle0" TargetType="Button" BasedOn="{StaticResource numButtonStyle1}">
+      </Style>
+      <Style x:Key="gridStyle0" TargetType="Grid" BasedOn="{StaticResource gridStyle1}">
+      </Style>
+      <Style x:Key="statusLabelStyle0" TargetType="Label" BasedOn="{StaticResource statusLabelStyle1}">
+      </Style>
+      <Style x:Key="displayLabelStyle0" TargetType="Label" BasedOn="{StaticResource displayLabelStyle1}">
+      </Style>
+      
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
   <ContentPage.Content>
-    <Label Text="This is my initial xaml code." />
+    <Grid Style="{DynamicResource gridStyle0}" >
+        <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <Label
+        x:Name="statusLabel"
+        Style="{DynamicResource statusLabelStyle0}"
+        Text="{Binding Source={StaticResource calcViewModel}, Path=strStatusText}"
+        FontSize="Small"
+        VerticalTextAlignment="End"
+        Grid.ColumnSpan="3"
+        />
+
+      <Label
+        x:Name="displayLabel"
+        Style="{DynamicResource displayLabelStyle0}"
+        Text="{Binding Source={StaticResource calcViewModel}, Path=strDisplayText}"
+        HorizontalOptions="FillAndExpand"
+        HorizontalTextAlignment="End"
+        VerticalOptions="FillAndExpand"
+        XAlign="End"
+        YAlign="End"
+        Grid.Row="1"
+        Grid.Column="0"
+        Grid.ColumnSpan="4"
+        FontSize="Large"
+        FontAttributes="Bold"
+        />
+
+      <Button
+        x:Name="oneButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="1"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="1"
+        Grid.Row="2"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="twoButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="2"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="2"
+        Grid.Row="2"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="thrButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="3"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="3"
+        Grid.Row="2"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="fouButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="4"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="4"
+        Grid.Row="3"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="fivButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="5"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="5"
+        Grid.Row="3"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="sixButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="6"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="6"
+        Grid.Row="3"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="sevButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="7"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="7"
+        Grid.Row="4"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="eigButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="8"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="8"
+        Grid.Row="4"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="ninButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="9"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="9"
+        Grid.Row="4"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="zerButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="0"
+        Style="{DynamicResource numButtonStyle0}"
+        Text="0"
+        Grid.Row="5"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        />
+
+      <Button
+        x:Name="decButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="."
+        Style="{DynamicResource numButtonStyle0}"
+        Text="."
+        Grid.Row="5"
+        Grid.Column="2"
+        />
+
+      <Button
+        x:Name="equButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="="
+        Style="{DynamicResource opButtonStyle0}"
+        Text="="
+        Grid.Row="6"
+        Grid.Column="2"
+        Grid.ColumnSpan="2"
+        />
+
+      <Button
+        x:Name="eclButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandClearDisplay}"
+        Style="{DynamicResource opButtonStyle0}"
+        Text="CE"
+        Grid.Row="6"
+        Grid.Column="0"
+        />
+
+      <Button
+        x:Name="cclButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandClearAll}"
+        Style="{DynamicResource opButtonStyle0}"
+        Text="CC"
+        Grid.Row="6"
+        Grid.Column="1"
+        />
+
+      <Button
+        x:Name="pluButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="+"
+        Style="{DynamicResource opButtonStyle0}"
+        Text="+"
+        Grid.Row="2"
+        Grid.Column="3"
+        />
+
+      <Button
+        x:Name="minButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="-"
+        Style="{DynamicResource opButtonStyle0}"
+        Text="-"
+        Grid.Row="3"
+        Grid.Column="3"
+        />
+
+      <Button
+        x:Name="mulButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="X"
+        Style="{DynamicResource opButtonStyle0}"
+        Text="X"
+        Grid.Row="4"
+        Grid.Column="3"
+        />
+
+      <Button
+        x:Name="divButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="&#x00F7;"
+        Style="{DynamicResource opButtonStyle0}"
+        Text="&#x00F7;"
+        Grid.Row="5"
+        Grid.Column="3"
+        />
+
+      <Button
+        x:Name="styButton"
+        Style="{StaticResource numButtonStyle1}"
+        FontSize="Small"
+        Text="Change to style 2"
+        Grid.Row="7"
+        Grid.Column="0"
+        Grid.ColumnSpan="4"
+        Clicked="OnStyleButtonClick"
+        />
+      
+    </Grid>
+    
   </ContentPage.Content>
 </ContentPage>
