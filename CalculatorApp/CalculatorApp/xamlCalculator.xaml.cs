@@ -269,6 +269,7 @@ namespace CalculatorApp
             displayLabel.Text = "0";
         }
 
+        /*
         void scrollUpStatusDisplay(string strNewStatus)
         {
             Application.Current.Properties["strStatus1"] = Application.Current.Properties["strStatus2"];
@@ -281,5 +282,6 @@ namespace CalculatorApp
                 + Application.Current.Properties["strStatus3"] + "\n"
                 + Application.Current.Properties["strStatus4"];
         }
+        */
     }
 }

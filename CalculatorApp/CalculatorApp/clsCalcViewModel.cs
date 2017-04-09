@@ -26,7 +26,7 @@ namespace CalculatorApp
                 {
                     strDisplayText = "0";
                 });
-            CommandClearDisplay = new Command(
+            CommandClearAll = new Command(
                 execute: () =>
                 {
                     clearAll();
@@ -153,7 +153,7 @@ namespace CalculatorApp
                     }
 
                     // who woulda thunk it. No error, it comes back as infinity
-                    if (dblResult.ToString() == "Infinity")
+                    if (dblResult.ToString() == "Infinity" || dblResult.ToString() == "-Infinity")
                     {
                         booOverflow = true;
                         dblResult = 0;
@@ -173,7 +173,7 @@ namespace CalculatorApp
                     }
 
                     // who woulda thunk it. No error, it comes back as infinity
-                    if (dblResult.ToString() == "Infinity")
+                    if (dblResult.ToString() == "Infinity" || dblResult.ToString() == "-Infinity")
                     {
                         booOverflow = true;
                         dblResult = 0;
@@ -213,15 +213,19 @@ namespace CalculatorApp
 
             // get ready for next entry or operator
             dblFirstOperand = dblResult;
+            if (strOperator != "=") { scrollUpStatusDisplay(strNewStatus); }
             strOperator = strNextOperator;
             booMakingNewEntry = true;
-            scrollUpStatusDisplay(strNewStatus);
         }
 
         private void clearAll()
         {
             strDisplayText = "0";
-        }
+            dblFirstOperand = 0;
+            dblSecondOperand = 0;
+            strOperator = "=";
+            booMakingNewEntry = true;
+    }
 
         private void scrollUpStatusDisplay(string strNewStatus)
         {
