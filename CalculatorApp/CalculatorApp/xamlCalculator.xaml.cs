@@ -13,8 +13,11 @@ namespace CalculatorApp
         public xamlCalculator()
         {
             InitializeComponent();
+       
+            //clsCalcViewModel cvmCalcViewModel = new clsCalcViewModel();
         }
 
+        /* DELETE ME ----------------------------------------------------
         void OnNumberButtonClick(object sender, EventArgs args)
         {
             if (displayLabel.Text == "OVERFLOW")
@@ -49,11 +52,14 @@ namespace CalculatorApp
             Application.Current.Properties["strNewEntry"] = "False";
             displayLabel.Text = strDisplay.Trim();
         }
+        */
 
+        /*
         void OnClearEntryButtonClick(object sender, EventArgs args)
         {
             displayLabel.Text = "0";
         }
+        */
 
         void OnOperatorButtonClick(object sender, EventArgs args)
         {
@@ -244,10 +250,12 @@ namespace CalculatorApp
             }
         }
 
+        /*
         void OnAllClearButtonClick(object sender, EventArgs args)
         {
             resetTheInterface();
         }
+        */
 
         void resetTheInterface()
         {

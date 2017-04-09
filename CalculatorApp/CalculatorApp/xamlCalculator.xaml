@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CalculatorApp="clr-namespace:CalculatorApp;assembly=CalculatorApp"
              x:Class="CalculatorApp.xamlCalculator">
   
   <ContentPage.Resources>
     <ResourceDictionary>
+      <CalculatorApp:clsCalcViewModel x:Key="calcViewModel" />
       
       <Style x:Key="opButtonStyle1" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Silver" />
@@ -109,7 +111,7 @@
       <Label
         x:Name="displayLabel"
         Style="{DynamicResource displayLabelStyle0}"
-        Text="0"
+        Text="{Binding Source={StaticResource calcViewModel}, Path=strDisplayText}"
         HorizontalOptions="FillAndExpand"
         HorizontalTextAlignment="End"
         VerticalOptions="FillAndExpand"
@@ -124,7 +126,8 @@
 
       <Button
         x:Name="oneButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="1"
         Style="{DynamicResource numButtonStyle0}"
         Text="1"
         Grid.Row="2"
@@ -133,7 +136,8 @@
 
       <Button
         x:Name="twoButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="2"
         Style="{DynamicResource numButtonStyle0}"
         Text="2"
         Grid.Row="2"
@@ -142,7 +146,8 @@
 
       <Button
         x:Name="thrButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="3"
         Style="{DynamicResource numButtonStyle0}"
         Text="3"
         Grid.Row="2"
@@ -151,7 +156,8 @@
 
       <Button
         x:Name="fouButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="4"
         Style="{DynamicResource numButtonStyle0}"
         Text="4"
         Grid.Row="3"
@@ -160,7 +166,8 @@
 
       <Button
         x:Name="fivButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="5"
         Style="{DynamicResource numButtonStyle0}"
         Text="5"
         Grid.Row="3"
@@ -169,7 +176,8 @@
 
       <Button
         x:Name="sixButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="6"
         Style="{DynamicResource numButtonStyle0}"
         Text="6"
         Grid.Row="3"
@@ -178,7 +186,8 @@
 
       <Button
         x:Name="sevButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="7"
         Style="{DynamicResource numButtonStyle0}"
         Text="7"
         Grid.Row="4"
@@ -187,7 +196,8 @@
 
       <Button
         x:Name="eigButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="8"
         Style="{DynamicResource numButtonStyle0}"
         Text="8"
         Grid.Row="4"
@@ -196,7 +206,8 @@
 
       <Button
         x:Name="ninButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="9"
         Style="{DynamicResource numButtonStyle0}"
         Text="9"
         Grid.Row="4"
@@ -205,7 +216,8 @@
 
       <Button
         x:Name="zerButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="0"
         Style="{DynamicResource numButtonStyle0}"
         Text="0"
         Grid.Row="5"
@@ -215,7 +227,8 @@
 
       <Button
         x:Name="decButton"
-        Clicked="OnNumberButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterDigit}"
+        CommandParameter="."
         Style="{DynamicResource numButtonStyle0}"
         Text="."
         Grid.Row="5"
@@ -224,7 +237,8 @@
 
       <Button
         x:Name="equButton"
-        Clicked="OnOperatorButtonClick"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="="
         Style="{DynamicResource opButtonStyle0}"
         Text="="
         Grid.Row="6"
@@ -234,56 +248,60 @@
 
       <Button
         x:Name="eclButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandClearDisplay}"
         Style="{DynamicResource opButtonStyle0}"
         Text="CE"
         Grid.Row="6"
         Grid.Column="0"
-        Clicked="OnClearEntryButtonClick"
         />
 
       <Button
         x:Name="cclButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandClearAll}"
         Style="{DynamicResource opButtonStyle0}"
         Text="CC"
         Grid.Row="6"
         Grid.Column="1"
-        Clicked="OnAllClearButtonClick"
         />
 
       <Button
         x:Name="pluButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="+"
         Style="{DynamicResource opButtonStyle0}"
         Text="+"
         Grid.Row="2"
         Grid.Column="3"
-        Clicked="OnOperatorButtonClick"
         />
 
       <Button
         x:Name="minButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="-"
         Style="{DynamicResource opButtonStyle0}"
         Text="-"
         Grid.Row="3"
         Grid.Column="3"
-        Clicked="OnOperatorButtonClick"
         />
 
       <Button
         x:Name="mulButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="X"
         Style="{DynamicResource opButtonStyle0}"
         Text="X"
         Grid.Row="4"
         Grid.Column="3"
-        Clicked="OnOperatorButtonClick"
         />
 
       <Button
         x:Name="divButton"
+        Command="{Binding Source={StaticResource calcViewModel}, Path=CommandEnterOperator}"
+        CommandParameter="&#x00F7;"
         Style="{DynamicResource opButtonStyle0}"
         Text="&#x00F7;"
         Grid.Row="5"
         Grid.Column="3"
-        Clicked="OnOperatorButtonClick"
         />
 
       <Button
