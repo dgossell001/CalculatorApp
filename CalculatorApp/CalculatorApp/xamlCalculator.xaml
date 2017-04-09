@@ -102,7 +102,7 @@
       <Label
         x:Name="statusLabel"
         Style="{DynamicResource statusLabelStyle0}"
-        Text=""
+        Text="{Binding Source={StaticResource calcViewModel}, Path=strStatusText}"
         FontSize="Small"
         VerticalTextAlignment="End"
         Grid.ColumnSpan="3"

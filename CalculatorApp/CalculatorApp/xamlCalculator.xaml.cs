@@ -61,6 +61,7 @@ namespace CalculatorApp
         }
         */
 
+        /*
         void OnOperatorButtonClick(object sender, EventArgs args)
         {
             if(displayLabel.Text == "OVERFLOW")
@@ -214,6 +215,7 @@ namespace CalculatorApp
                 displayLabel.Text = dblResult.ToString();
             }
         }
+        */
 
         void OnStyleButtonClick(object sender, EventArgs args)
         {

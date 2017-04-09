@@ -41,6 +41,8 @@ namespace CalculatorApp
         private double dblFirstOperand = 0;
         private double dblSecondOperand = 0;
         private string strOperator = "=";
+        private string statusText;
+        private string[] strStatusLines = new string[4];
         private bool booMakingNewEntry = true;
         private bool booOverflow = false;
 
@@ -53,10 +55,10 @@ namespace CalculatorApp
                 {
                     displayText = value;
 
-                    PropertyChangedEventHandler hndPropChandler = PropertyChanged;
-                    if(hndPropChandler != null)
+                    PropertyChangedEventHandler hndDisplayChanged = PropertyChanged;
+                    if(hndDisplayChanged != null)
                     {
-                        hndPropChandler(this, new PropertyChangedEventArgs("strDisplayText"));
+                        hndDisplayChanged(this, new PropertyChangedEventArgs("strDisplayText"));
                     }
                 }
             }
@@ -64,17 +66,24 @@ namespace CalculatorApp
             get { return displayText; }
         }
 
-        /*
-        public double dblFirstOperand
+        public string strStatusText
         {
-            set; get;
-        }
+            private set
+            {
+                if (statusText != value)
+                {
+                    statusText = value;
 
-        public double dblSecondOperand
-        {
-            set; get;
+                    PropertyChangedEventHandler hndStatusChanged = PropertyChanged;
+                    if (hndStatusChanged != null)
+                    {
+                        hndStatusChanged(this, new PropertyChangedEventArgs("strStatusText"));
+                    }
+                }
+            }
+
+            get { return statusText; }
         }
-        */
 
         // methods
         // internal private method
@@ -216,7 +225,19 @@ namespace CalculatorApp
 
         private void scrollUpStatusDisplay(string strNewStatus)
         {
-            // scroll it up
+            strStatusLines[3] = strStatusLines[2];
+            strStatusLines[2] = strStatusLines[1];
+            strStatusLines[1] = strStatusLines[0];
+            strStatusLines[0] = strNewStatus;
+
+            string strMyStatus = "";
+            for (int i = 3; i > -1; i--)
+            {
+                strMyStatus += strStatusLines[i];
+                if (i > 0) { strMyStatus += "\n"; }
+            }
+
+            strStatusText = strMyStatus;
         }
 
         public ICommand CommandEnterDigit { private set; get; }
