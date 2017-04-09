@@ -225,7 +225,9 @@ namespace CalculatorApp
             dblSecondOperand = 0;
             strOperator = "=";
             booMakingNewEntry = true;
-    }
+
+            scrollUpStatusDisplay("Cleared calculations");
+        }
 
         private void scrollUpStatusDisplay(string strNewStatus)
         {
